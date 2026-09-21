@@ -6,20 +6,23 @@ import cv2
 import mss
 import numpy as np
 
+
+
+
 os.environ.setdefault("PYTORCH_ENABLE_MPS_FALLBACK", "1")
 
 REGION = {"left": 100, "top": 100, "width": 640, "height": 360}
 COLS = 100
-COLOR = False
+COLOR = True
 COLOR_MODE = "256"
 INVERT = False
 FPS = 45
 DEPTH_DEVICE = "auto"
 
 PASSES = {
-    "luminance": {"on": False, "show": False, "weight": 0.2},
-    "depth": {"on": False, "show": False, "weight": 1.0, "every": 2},
-    "edges": {"on": True, "show": False, "weight": 0.5},
+    "luminance": {"on": True, "show": False, "weight": 0.2},
+    "depth": {"on": True, "show": False, "weight": 1.0, "every": 2},
+    "edges": {"on": False, "show": False, "weight": 0.5},
     "motion": {"on": False, "show": False, "weight": 0.5},
     "yolo": {"on": False, "show": False, "weight": 1.0},
 }
